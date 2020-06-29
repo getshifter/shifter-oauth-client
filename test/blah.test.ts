@@ -1,7 +1,12 @@
-import { sum } from '../src';
+import { getToken, OAuth2Process } from '../src';
 
-describe('blah', () => {
-  it('works', () => {
-    expect(sum(1, 1)).toEqual(2);
+describe('#getToken', () => {
+  it('successfully', async () => {
+    jest.spyOn(OAuth2Process.prototype, 'authorize').mockReturnValue(Promise.resolve())
+    jest.spyOn(OAuth2Process.prototype, 'wait').mockReturnValue(Promise.resolve())
+    // @ts-ignore
+    jest.spyOn(OAuth2Process.prototype, 'getTokens').mockReturnValue({idToken: 'token'})
+    const result = await getToken()
+    expect(result).toEqual({idToken: 'token'})
   });
 });
