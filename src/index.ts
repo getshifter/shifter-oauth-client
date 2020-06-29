@@ -10,7 +10,7 @@ import {
 import { uuid } from 'uuidv4';
 import { open } from 'openurl';
 import Receiver from './receiver';
-import Config from './config'
+import Config from './config';
 
 /**
  * Emitting on got token
@@ -37,16 +37,14 @@ export class OAuth2Process {
     // @ts-ignore
     this.receiver = null;
     this.config = config;
-    console.log(this.config)
+    console.log(this.config);
   }
 
   /**
    * Issuer
    */
   public async getIssuer(): Promise<Issuer<Client>> {
-    const issuer = await Issuer.discover(
-      `${this.config.issuer}`
-    );
+    const issuer = await Issuer.discover(`${this.config.issuer}`);
     return issuer;
   }
 
@@ -96,7 +94,7 @@ export class OAuth2Process {
 
     // Start authorize process
     const url = client.authorizationUrl(authorizationParameters);
-    console.log(url)
+    console.log(url);
     open(url);
     console.log('Authorize:Request', url);
   }

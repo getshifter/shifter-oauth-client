@@ -1,3 +1,5 @@
-export default {
-    UserPoolId: 'us-east-1_OqeySRZoo'
-}
+const config = {
+  UserPoolId: 'us-east-1_OqeySRZoo',
+};
+
+export default config;
