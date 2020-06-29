@@ -1,3 +1,8 @@
+# SET OAuth credentials as environment variables
+
+export SHIFTER_CLIENT_ID=xxxxxx
+export SHIFTER_CLIENT_SECRET=xxxxxxxx
+
 # TSDX Bootstrap
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
